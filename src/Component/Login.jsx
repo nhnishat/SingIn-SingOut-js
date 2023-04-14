@@ -33,8 +33,11 @@ const Login = () => {
 
 	return (
 		<div>
-			<button onClick={handleGoogleSingIn}>Google Login</button>
-			<button onClick={handleSingOut}>Sing out</button>
+			{!users ? (
+				<button onClick={handleGoogleSingIn}>Google Login</button>
+			) : (
+				<button onClick={handleSingOut}>Sing out</button>
+			)}
 
 			{users && (
 				<div>
